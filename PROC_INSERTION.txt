@@ -1,0 +1,17 @@
+PROCEDURE INSERTION(val : INTEGER ; tab : ARRAY_OF INTEGER[20];)
+VAR
+    i,j,k : INTEGER := 0;
+BEGIN
+        for(i=0 ; i < tab.length-1 ; i++)
+        {
+           if(tab[i]>val)
+           break;
+        }
+        for(int j=tab.length-2; j>=i; j--)
+        {
+           tab[j+1]=tab[j];            
+        }
+      tab[i]=val;
+      for(k=0 ; k < tab.length-1 ; k++)
+      write(tab[k]+', ');
+END
