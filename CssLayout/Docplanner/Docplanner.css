@@ -1,0 +1,191 @@
+.logo-docplanner{
+    width: 268px;
+    height: 33px;
+}
+
+li a span {
+    font-weight: 500;
+    color : rgb(171,171,171);
+}
+
+ li a span:hover{
+    color : #00b39b;
+}
+
+.lead_logo {
+    display: block;
+    margin: 3% auto;
+}
+.background-logo{
+    font-size:72px;
+    display: block;
+    width: 150px;
+    height: auto;
+  /* margin :  */
+}
+
+.introduction-logo img {
+    height: 231px;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.green-docplanner {
+	 color : #00b39b;
+}
+
+.dropdown-green-docplanner{
+    font-weight: 400;
+    color : rgb(171,171,171);
+	width : 100%;
+}
+
+.docplanner-font{
+    font-family: Roboto,Arial,sans-serif;
+    color: #747474;
+    margin: 0.8em 0;
+    line-height: 1.85;
+    font-weight: 500;
+}
+
+.stats-font{
+    text-align: center;
+    color: #747474;
+    font-size: .8125em;
+}
+
+.docplanner-card-first{
+    border-radius: 0.75em !important;
+    background-color: #00ccb1 !important;
+    transition: all .2s ease 0s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    width: 100% !important;
+}
+
+.docplanner-card-second{
+    border-radius: 0.75em !important;
+    background-color: #3d83df !important;
+    transition: all .2s ease 0s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    width: 100% !important;
+}
+
+.docplanner-card-third{
+    border-radius: 0.75em !important;
+    background-color: #1b2734 !important;
+    transition: all .2s ease 0s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    width: 100% !important;
+}
+
+.docplanner-card-first h4{
+    font-size : 26px !important;
+}
+.docplanner-card-first p{
+    font-size : 24px !important;
+}
+
+.docplanner-card-second h4{
+    font-size : 26px !important;
+}
+.docplanner-card-second p{
+    font-size : 24px !important;
+}
+
+.docplanner-card-third h4{
+    font-size : 26px !important;
+}
+.docplanner-card-third p{
+    font-size : 24px !important;
+}
+
+div a img {
+    width:100%;
+    height: 35px;
+}
+
+
+div a svg {
+    width:100%;
+    height: 35px;
+}
+
+.logos {
+    width:100%;
+    height: 35px;
+    color:#00b39b; 
+}
+
+
+.row path {
+ fill:rgb(171,171,171);;
+}
+
+.row *[id] img {
+    filter: grayscale(100%);
+}
+
+#logo1:hover path {
+    fill: #00b39b;
+}
+#logo2:hover path{
+    fill: #00b39b;
+}
+#logo3:hover path{
+    fill: #00b39b;
+}
+#logo4:hover path{
+    fill: #00b39b;
+}
+#logo5:hover path{
+    fill: #00b39b;
+}
+#logo6:hover img{
+    filter: none;
+}
+#logo7:hover img{
+    filter: none;
+}
+#logo8:hover img{
+    filter: none;
+}
+#logo9:hover img{
+    filter: none;
+}
+/* [class*="col-"]:hover path {
+    fill: #00b39b;
+   }
+
+.col:hover path {
+    fill: #00b39b;
+   }
+
+.row img {
+    filter: grayscale(100%);
+  }
+
+  .row img:hover {
+    filter: ;
+  } */
+
+  .stats{
+    background: #e5faf8;
+    background: url(logo-background-transparent.png) 7% bottom no-repeat , linear-gradient(-45deg,rgba(0,204,177,.01) 5%,rgba(61,199,223,.1));
+    /* padding: 1.875em 0 0.625em; */
+    overflow: hidden;
+    /* margin: 3.125rem auto 5.5rem; */
+  }
+
+  .stats-card{
+    border-radius:   0.65em !important;
+    border: none;
+  }
