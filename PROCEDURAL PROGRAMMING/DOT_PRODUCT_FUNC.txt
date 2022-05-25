@@ -1,0 +1,31 @@
+FUNCTION dot_product(var v1 : ARRAY_OF FLOAT[3] ; var v2 : ARRAY_OF FLOAT[3]) : FLOAT
+VAR
+    ps : INTEGER := 0 ;
+    i : INTEGER := 0;
+BEGIN
+    FOR i FROM 0 TO 2 STEP 1  DO
+        ps := ps + v1[i]*v2[i]
+    END_FOR
+   RETURN(ps);
+END
+
+
+
+
+ALGORITHM n_vectors    
+VAR
+    PAIRVECTOR : STRUCT
+                        v1 : ARRAY_OF FLOAT[3];
+                        v2 : ARRAY_OF FLOAT[3];
+                    END_STRUCT
+    npairvector : PAIRVECTOR[10];     
+    i : INTEGER;           
+BEGIN
+    FOR i FROM 0 TO 9 STEP 1  DO
+    IF (dot_product(npairvector[i].v1,npairvector[i].v2) == 0) THEN
+        write('the pair ' + i + ' v1 et v2 are orthogonal')
+    ELSE
+        write('the pair ' + i + ' v1 et v2 are not orthogonal')
+    END_IF        
+    END_FOR   
+END
