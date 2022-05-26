@@ -1,0 +1,27 @@
+ALGORITHM sentence
+VAR
+    c : CHAR;
+    lengthSentence : INTEGER := 0;
+    numberWords : INTEGER;
+    numberVowels : INTEGER :=  0;
+    vowelList : STRING := "aeiouAEIOU";
+BEGIN
+    REPEAT
+        Read(c)
+          IF( c != '')
+           {
+               lengthSentence := lengthSentence + 1;
+               IF(vowelList.indexOf(c) !== -1)
+                {
+                  numberVowels := numberVowels+1;
+                }
+               END_IF
+             
+           }
+           ELSE
+               {
+                   numberWords := numberWords + 1;
+               }
+           END_IF
+    UNTIL (c != '.')
+END
