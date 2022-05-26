@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./icon.png"/>
+    <script src="./ShoppingCart.js"></script>
+    <script src="https://kit.fontawesome.com/9135f0e1b5.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Shopping Cart</title>
+
+<style>
+    i:hover{
+        cursor: pointer;
+    }
+</style>
+
+</head>
+<body>
+    <form id="shopping-cart" action="cart.html" method="post">
+        <table id="table" class="table table-striped table-hover">
+            <thead>
+                <tr>   
+                    <th  scope="col">Item</th>
+                    <th  scope="col">Quantity</th>
+                    <th  scope="col">Unit Price</th>
+                    <th scope="col">TotalPrice</th>
+                    <th colspan="4">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fruits surgelés</td>
+                    <td>5</td>
+                    <td>1.5</td> 
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Mais en conserve</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Thon en conserve</td>
+                    <td>6</td>
+                    <td>1.35</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Harissa en conserve</td>
+                    <td>6</td>
+                    <td>1.25</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Double concentré de tomates</td>
+                    <td>4</td>
+                    <td>1.75</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Confitures</td>
+                    <td>2</td>
+                    <td>4.5</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Bières</td>
+                    <td>8</td>
+                    <td>2.5</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Chips</td>
+                    <td>4</td>
+                    <td>1.75</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Tomates</td>
+                    <td>2</td>
+                    <td>0.8</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Oignons</td>
+                    <td>2</td>
+                    <td>1.75</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Poivres</td>
+                    <td>3</td>
+                    <td>1.25</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Gingembres</td>
+                    <td>1</td>
+                    <td>1.5</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Aubergines</td>
+                    <td>2</td>
+                    <td>1.95</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Champigons</td>
+                    <td>1</td>
+                    <td>1.85</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Citrons</td>
+                    <td>2</td>
+                    <td>1.65</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Pommes</td>
+                    <td>2</td>
+                    <td>2.35</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Bananes</td>
+                    <td>3</td>
+                    <td>1.95</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Oranges</td>
+                    <td>5</td>
+                    <td>1.35</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Fraises</td>
+                    <td>2</td>
+                    <td>2.25</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Noix de coco</td>
+                    <td>3</td>
+                    <td>2.75</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Abricots</td>
+                    <td>3</td>
+                    <td>1.45</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Peches</td>
+                    <td>2</td>
+                    <td>2.35</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Raisins</td>
+                    <td>4</td>
+                    <td>1.85</td>
+                    <td></td>
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+                <tr>
+                    <td>Cersies</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td></td> 
+                    <td><i onclick="addItem(this)" class="fs-3 fa-solid fa-circle-plus text-success"></i></td>
+                    <td><i onclick="removeItem(this)" class="fs-3 fa-solid fa-circle-minus text-warning"></i></td>
+                    <td><i onclick="deleteItem(this)" class="fs-3 fa-solid fa-trash-can text-secondary"></i></td>
+                    <td><i onclick="likeItem(this)" class="fs-3 fa-solid fa-heart text-secondary"></i></td>
+                </tr>
+				<tr style="font-weight:bold">
+				    <td>TOTAL</td>
+					<td id="totQty"></td>
+					<td id="totUprice"></td>
+					<td id="totPrice"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</htmld
