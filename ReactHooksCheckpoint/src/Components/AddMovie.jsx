@@ -7,7 +7,6 @@ export default function AddMovie() {
     const [rating, setRating] = useState(0);
 
 const handleSubmit = (e) =>{
-    console.log(ListOfMovies);
     e.preventDefault();
     var movie = {
         title : title,

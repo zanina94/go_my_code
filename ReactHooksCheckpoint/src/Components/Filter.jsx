@@ -5,24 +5,18 @@ import ListOfMovies from '../ListOfMovies';
 import AddMovie from './AddMovie';
 
 function Filter(props) {
-    const [title, SetTitle] = useState(ListOfMovies[2].title);
-    const [rating, setRating] = useState(ListOfMovies[2].rating);
+    const [title, setTitle] = useState("");
+    const [rating, setRating] = useState(0);
     const [isShow, setIsShow] = useState(false)
     
-    const handleClick = (e) => {
-      debugger
-      e.preventDefault();
-      var l = ListOfMovies.filter(movie=> movie.title === title && movie.rating === rating)
-      ListOfMovies = l;
-    }
-  let button ;
+    var filteredMovies = ListOfMovies.filter(movie=> movie.title.toLowerCase().includes(title) && movie.rating >= rating)
+
+
   let body;
   if (isShow){
-  button = <button  onClick={()=>setIsShow(false)} class="btn btn-outline-success fw-bold" id="filter">ADD MOVIE</button>;
-  body = <MovieList/>
+  body = <MovieList movies={filteredMovies} />
    }
     else{
-   button = <button  onClick={()=>setIsShow(true)} class="btn btn-outline-info fw-bold" id="filter">SHOW MOVIES</button>;
    body = <AddMovie/>
     }
    return (
@@ -31,17 +25,17 @@ function Filter(props) {
         <div class="row text-light fw-bold p-4">       
          <div class="col-4">
           <label for="title" class="form-label">TITLE</label>
-          <input type="text" value={title} class="form-control" id="title" placeholder="title" onChange={e => SetTitle(e.target.value)}/>
+          <input type="text" value={title} class="form-control " id="title" placeholder="title" onChange={e => setTitle(e.target.value)}/>
         </div>
         <div class="col-4">
           <label for="rating" class="form-label">RATING</label>
-          <input type="number" value={rating} class="form-control" id="rating" onChange={e => setRating(e.target.value)}/>
+          <input type="number" value={rating} class="form-control d-flex justify-content-center" id="rating" onChange={e => setRating(e.target.value)}/>
         </div>
-        <div class="col-1 ms-3 mt-3 pt-3">
-          <button  onClick={()=> handleClick}  class="btn btn-outline-light fw-bold" id="filter">FILTER</button>
+        <div class="col-2 d-flex justify-content-end mt-3 pt-3">
+        <button  onClick={()=>setIsShow(false)} class="btn btn-outline-success fw-bold" id="filter">ADD MOVIE</button>
         </div>
-        <div class="col-2 ps-0 mt-3 pt-3">
-          {button}
+        <div class="col-2 mt-3 pt-3">
+        <button  onClick={()=>setIsShow(true)} class="btn btn-outline-info fw-bold" id="filter">SHOW MOVIES</button>
         </div> 
 
           

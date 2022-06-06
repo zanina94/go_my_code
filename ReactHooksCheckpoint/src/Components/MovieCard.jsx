@@ -1,23 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import StarRatings from 'react-star-ratings/build/star-ratings';
 
 function MovieCard(props) {
   return (
       <>
-    <div class="col-4 p-2 card text-center">
-  <div class="card-header">
+    <div class="col-3 p-2 card text-center">
+  <div style={{height:'65px'}} class="card-header bg-dark text-white">
   <h5 class="card-title">{props.title}</h5>
   </div>
-  <img src={props.posterURL} class="card-img-top"
+  <img style={{height:'400px'}} src={props.posterURL} class="card-img-top"
    alt="img"/>
   <div class="card-body">
 
     <p class="card-text">{props.description}</p>
   </div>
-  <div class="card-footer text-muted">
-    {props.rating}/10
+  <div class="card-footer bg-dark text-muted">
+    <StarRatings
+          rating={props.rating}
+          starRatedColor="gold"
+          starDimension="20px"
+          // changeRating={this.changeRating}
+          numberOfStars={10}
+          name='rating'
+        />
   </div>
 </div>
+
 </>
   )
 }
